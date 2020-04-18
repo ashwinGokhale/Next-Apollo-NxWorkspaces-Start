@@ -1,0 +1,18 @@
+input UserInput {
+    id: ID
+    name: String
+    email: String
+}
+
+input LocalAuthInput {
+    user: UserInput
+    token: String
+}
+
+extend type Query {
+    authData: AuthOutput @client
+}
+
+extend type Mutation {
+    setAuth(input: LocalAuthInput): AuthOutput @client
+}

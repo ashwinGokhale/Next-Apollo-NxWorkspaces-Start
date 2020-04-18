@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+    postgres:
+        container_name: postgres_container
+        image: postgres
+        environment:
+            - POSTGRES_DB=app
+            - POSTGRES_USER=admin
+            - POSTGRES_PASSWORD=admin
+            - PGDATA=/data/postgres
+        volumes:
+            - postgres:/data/postgres
+        ports:
+            - '5432:5432'
+        networks:
+            - postgres
+        restart: unless-stopped
+
+    pgadmin:
+        container_name: pgadmin_container
+        image: dpage/pgadmin4
+        environment:
+            PGADMIN_DEFAULT_EMAIL: test@test.com
+            PGADMIN_DEFAULT_PASSWORD: test123
+        volumes:
+            - pgadmin:/root/.pgadmin
+        ports:
+            - '8081:80'
+        networks:
+            - postgres
+        restart: unless-stopped
+
+networks:
+    postgres:
+        driver: bridge
+
+volumes:
+    postgres:
+    pgadmin:
