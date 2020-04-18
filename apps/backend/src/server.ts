@@ -69,8 +69,8 @@ export class Server {
         }
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
-        this.app.use(cookieParser());
-        this.app.use(cors());
+        this.app.use(cookieParser(config.SECRET));
+        this.app.use(cors({ origin: config.FRONTEND_URL, credentials: true }));
         this.app.use(multer.any());
         this.app.on('error', this.logger.error);
         this.app.use('/api', (req, res) => {

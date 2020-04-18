@@ -1,20 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import { Form, Input, message, Button } from 'antd';
-import { useLoginMutation, useSetAuthMutation } from '@app/data-access';
+import { Form, message } from 'antd';
+import {
+    useLoginMutation,
+    useSetAuthMutation,
+    LoginInput
+} from '@app/data-access';
 import { err } from '@app/modules/common';
 import Router from 'next/router';
+import { LoginForm } from './LoginForm';
 
 const key = 'login-page-msg';
 
 export const LoginPage = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [form] = Form.useForm();
 
     const [login] = useLoginMutation();
     const [setAuth] = useSetAuthMutation();
 
-    const onSubmit = async () => {
+    const onSubmit = async (input: LoginInput) => {
         try {
             message.destroy();
             message.loading({
@@ -22,7 +26,7 @@ export const LoginPage = () => {
                 key,
                 duration: 0
             });
-            const res = await login({ variables: { email, password } });
+            const res = await login({ variables: { input } });
 
             await setAuth({
                 variables: { input: res.data.login }
@@ -49,41 +53,7 @@ export const LoginPage = () => {
                     className="panel panel-default"
                     style={{ paddingLeft: '30px' }}
                 >
-                    <Form className="panel-body">
-                        <Input
-                            type="text"
-                            name="email"
-                            id="email"
-                            placeholder="Email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            style={{ width: '200px', marginRight: '15px' }}
-                        />
-                        <br />
-                        <br />
-                        <Input
-                            type="password"
-                            name="password"
-                            id="password"
-                            placeholder="Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            style={{ width: '200px' }}
-                        />
-                        <br />
-                        <br />
-                        <Button onClick={onSubmit}>Sign In</Button>
-                        <br />
-                        <br />
-                        <input
-                            type="checkbox"
-                            name="remember"
-                            // onClick={onClick}
-                        />{' '}
-                        Remember Me
-                        <br />
-                        <br />
-                    </Form>
+                    <LoginForm form={form} onSubmit={onSubmit} />
                 </div>
             </div>
         </div>

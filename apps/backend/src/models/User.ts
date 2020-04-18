@@ -11,7 +11,13 @@ import {
     BaseEntity
 } from 'typeorm';
 import { ObjectType, ID, Field, InputType } from 'type-graphql';
-import { Matches, IsEmail, MinLength, IsNotEmpty } from 'class-validator';
+import {
+    Matches,
+    IsEmail,
+    MinLength,
+    IsNotEmpty,
+    IsBoolean
+} from 'class-validator';
 import { hash, compare } from 'bcrypt';
 import {
     Role,
@@ -161,7 +167,12 @@ export class LoginInput implements ILoginInput {
     @IsNotEmpty({ message: 'Email must not be empty' })
     @IsEmail({}, { message: 'Please provide a valid email address' })
     email: string;
+
     @Field()
     @IsNotEmpty({ message: 'Password must not be empty' })
     password: string;
+
+    @Field({ nullable: true })
+    @IsBoolean({ message: 'Remember me must be either true or false' })
+    rememberMe?: boolean;
 }

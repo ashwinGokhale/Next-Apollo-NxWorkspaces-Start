@@ -6,10 +6,10 @@ import { onError } from 'apollo-link-error';
 import { setContext } from 'apollo-link-context';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import getConfig from 'next/config';
-import { isBrowser } from '@app/modules/common';
 import { getDataFromTree } from '@apollo/react-ssr';
+import { isBrowser } from '@app/modules/common';
 import { GetAuthDocument } from '@app/data-access';
-import { parseCookies, destroyCookie, setCookie } from 'nookies';
+import { parseCookies, destroyCookie } from 'nookies';
 import gql from 'graphql-tag';
 
 export default withApollo(
@@ -56,7 +56,8 @@ export default withApollo(
                     uri: `${
                         getConfig().publicRuntimeConfig.BACKEND_URL
                     }/graphql`,
-                    useGETForQueries: true
+                    useGETForQueries: true,
+                    credentials: 'include'
                 })
             ]),
             connectToDevTools:
@@ -77,7 +78,7 @@ export default withApollo(
                         });
 
                         if (!input || !input.token) destroyCookie(ctx, 'token');
-                        else setCookie(ctx, 'token', input.token, {});
+                        // else setCookie(ctx, 'token', input.token, {});
                         return input;
                     }
                 },

@@ -17,6 +17,7 @@ export interface ISignupInput {
 export interface ILoginInput {
     email: string;
     password: string;
+    rememberMe?: boolean;
 }
 
 export interface IAuthOutput {

@@ -10,6 +10,7 @@ module.exports = {
     TYPEORM_CONNECTION: env.TYPEORM_CONNECTION
         ? env.TYPEORM_CONNECTION
         : 'postgres',
+    FRONTEND_URL: env.FRONTEND_URL || 'http://localhost:4200',
     EXPIRES_IN: env.EXPIRES_IN || '7 days',
     NODE_ENV: env.NODE_ENV || 'development',
     SECRET: env.SECRET || 'my-secret',

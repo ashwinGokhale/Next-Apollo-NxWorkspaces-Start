@@ -1,11 +1,16 @@
 import { Resolver, Query, Mutation, Arg, Authorized, Ctx } from 'type-graphql';
 import { Repository } from 'typeorm';
 import { InjectRepository } from 'typeorm-typedi-extensions';
+import * as ms from 'ms';
 import { User, AuthOutput, SignupInput, LoginInput } from '../models/User';
 import { signToken } from '../utils';
 import { BadRequestError } from '../utils/errors';
 import { AuthenticationError } from 'apollo-server-express';
 import { IContext } from '../middleware/authentication';
+import { config } from '../config';
+import { CookieOptions } from 'express';
+
+const rememberMeTime = ms(config.EXPIRES_IN);
 
 @Resolver()
 export class AuthResolver {
@@ -52,6 +57,15 @@ export class AuthResolver {
             throw new AuthenticationError('Incorrect email and/or password');
 
         const token = signToken(user);
+
+        const cookieOpts: CookieOptions = input.rememberMe
+            ? {
+                  maxAge: rememberMeTime,
+                  signed: true
+              }
+            : { signed: true };
+
+        ctx.res.cookie('token', token, cookieOpts);
 
         const output: AuthOutput = {
             user,
