@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { message } from 'antd';
-import { useSetAuthMutation } from '@app/data-access';
+import { useSetAuthMutation } from '@myapp/data-access';
 
 /* eslint-disable-next-line */
 export interface IProps {}

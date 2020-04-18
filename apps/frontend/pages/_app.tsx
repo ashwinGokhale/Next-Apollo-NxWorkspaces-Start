@@ -2,8 +2,8 @@ import { AppContext } from 'next/app';
 import React from 'react';
 import { ApolloProvider } from '@apollo/react-hooks';
 import withApollo from '../lib/withApollo';
-import { isBrowser } from '@app/modules/common';
-import { IContext } from '@app/data';
+import { isBrowser } from '@myapp/modules/common';
+import { IContext } from '@myapp/data';
 import {
     RefreshAuthDocument,
     RefreshAuthQuery,
@@ -11,8 +11,8 @@ import {
     GetAuthDocument,
     SetAuthMutation,
     SetAuthDocument
-} from '@app/data-access';
-import { Layout } from '@app/modules/common';
+} from '@myapp/data-access';
+import { Layout } from '@myapp/modules/common';
 
 interface IProps extends AppContext {
     ctx: IContext;

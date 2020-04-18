@@ -5,7 +5,7 @@ services:
         container_name: postgres_container
         image: postgres
         environment:
-            - POSTGRES_DB=app
+            - POSTGRES_DB=myapp
             - POSTGRES_USER=admin
             - POSTGRES_PASSWORD=admin
             - PGDATA=/data/postgres

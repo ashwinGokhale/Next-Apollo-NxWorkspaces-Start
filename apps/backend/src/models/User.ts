@@ -27,7 +27,7 @@ import {
     ILoginInput,
     Lazy,
     IPost
-} from '@app/data';
+} from '@myapp/data';
 import { Post } from './Post';
 import { Comment } from './Comment';
 

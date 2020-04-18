@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { IContext } from '@app/data';
-import { ReactComponent as NxLogo } from '@app/assets/nx-logo-white.svg';
+import { IContext } from '@myapp/data';
+import { ReactComponent as NxLogo } from '@myapp/assets/nx-logo-white.svg';
 import './HomePage.less';
 
 interface IProps {

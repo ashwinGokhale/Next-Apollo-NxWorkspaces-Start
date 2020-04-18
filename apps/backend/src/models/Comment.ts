@@ -3,7 +3,7 @@ import { IsNotEmpty } from 'class-validator';
 import { Field, ObjectType, ID, InputType } from 'type-graphql';
 import { Post } from './Post';
 import { User } from './User';
-import { IComment, Lazy, IUser, IPost, ICreateCommentInput } from '@app/data';
+import { IComment, Lazy, IUser, IPost, ICreateCommentInput } from '@myapp/data';
 
 @InputType()
 export class CreateCommentInput implements ICreateCommentInput {

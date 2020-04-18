@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar } from '../Navbar/Navbar';
 import './Layout.less';
 import { Layout as AntLayout, message } from 'antd';
-import { IUser } from '@app/data';
+import { IUser } from '@myapp/data';
 
 const { Content } = AntLayout;
 

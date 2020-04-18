@@ -6,7 +6,7 @@ module.exports = {
     PORT: env.PORT || 5000,
     DATABASE_URL: env.DATABASE_URL
         ? env.DATABASE_URL
-        : 'postgres://admin:admin@localhost:5432/app',
+        : 'postgres://admin:admin@localhost:5432/myapp',
     TYPEORM_CONNECTION: env.TYPEORM_CONNECTION
         ? env.TYPEORM_CONNECTION
         : 'postgres',

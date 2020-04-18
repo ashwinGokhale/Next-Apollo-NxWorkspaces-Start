@@ -28,7 +28,7 @@ import { formatError } from './middleware/format';
 import { Application } from 'express';
 import { AddressInfo } from 'net';
 import { PostResolver } from './resolvers/post.resolver';
-import { Tag, Role } from '@app/data';
+import { Tag, Role } from '@myapp/data';
 import { AuthResolver } from './resolvers/auth.resolver';
 import { CommentResolver } from './resolvers/comment.resolver';
 

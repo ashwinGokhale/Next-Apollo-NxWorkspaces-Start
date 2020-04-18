@@ -1,1 +1,1 @@
-export { LogoutPage as default } from '@app/modules/logout';
+export { LogoutPage as default } from '@myapp/modules/logout';

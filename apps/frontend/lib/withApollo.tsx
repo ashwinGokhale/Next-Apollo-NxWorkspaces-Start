@@ -7,8 +7,8 @@ import { setContext } from 'apollo-link-context';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import getConfig from 'next/config';
 import { getDataFromTree } from '@apollo/react-ssr';
-import { isBrowser } from '@app/modules/common';
-import { GetAuthDocument } from '@app/data-access';
+import { isBrowser } from '@myapp/modules/common';
+import { GetAuthDocument } from '@myapp/data-access';
 import { parseCookies, destroyCookie } from 'nookies';
 import gql from 'graphql-tag';
 

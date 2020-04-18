@@ -5,8 +5,8 @@ import {
     useLoginMutation,
     useSetAuthMutation,
     LoginInput
-} from '@app/data-access';
-import { err } from '@app/modules/common';
+} from '@myapp/data-access';
+import { err } from '@myapp/modules/common';
 import Router from 'next/router';
 import { LoginForm } from './LoginForm';
 

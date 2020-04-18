@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Input, Button, Form, Checkbox } from 'antd';
 import { FormInstance } from 'antd/lib/form';
-import { LoginInput } from '@app/data-access';
+import { LoginInput } from '@myapp/data-access';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import './LoginForm.less';
 

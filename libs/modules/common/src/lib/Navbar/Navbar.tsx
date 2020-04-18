@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { Menu, Dropdown, Avatar, Layout } from 'antd';
-import { IUser, IContext } from '@app/data';
-import { GetAuthDocument, GetAuthQuery } from '@app/data-access';
+import { IUser, IContext } from '@myapp/data';
+import { GetAuthDocument, GetAuthQuery } from '@myapp/data-access';
 import { NavMenu } from './NavMenu';
 import * as styles from './Navbar.less';
 

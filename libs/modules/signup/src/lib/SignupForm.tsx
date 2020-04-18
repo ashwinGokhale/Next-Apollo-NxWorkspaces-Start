@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 import { FormInstance } from 'antd/lib/form';
-import { SignupInput } from '@app/data-access';
+import { SignupInput } from '@myapp/data-access';
 
 const formItemLayout = {
     labelCol: {

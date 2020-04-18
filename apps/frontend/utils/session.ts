@@ -1,7 +1,7 @@
 import Router from 'next/router';
 import { parseCookies } from 'nookies';
-import { Role, IUser, IContext } from '@app/data';
-import { GetAuthDocument, GetAuthQuery } from '@app/data-access';
+import { Role, IUser, IContext } from '@myapp/data';
+import { GetAuthDocument, GetAuthQuery } from '@myapp/data-access';
 
 export const getToken = (ctx?: IContext) => {
     const { token } = parseCookies(ctx);

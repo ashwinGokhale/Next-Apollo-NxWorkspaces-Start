@@ -1,1 +1,1 @@
-export { HomePage as default } from '@app/modules/home';
+export { HomePage as default } from '@myapp/modules/home';

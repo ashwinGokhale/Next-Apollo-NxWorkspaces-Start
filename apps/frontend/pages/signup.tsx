@@ -1,1 +1,1 @@
-export { SignupPage as default } from '@app/modules/signup';
+export { SignupPage as default } from '@myapp/modules/signup';

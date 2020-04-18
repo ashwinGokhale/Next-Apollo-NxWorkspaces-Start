@@ -1,7 +1,7 @@
 import { decode, verify } from 'jsonwebtoken';
 import { AuthChecker } from 'type-graphql';
 import { User } from '../models/User';
-import { Role, IToken } from '@app/data';
+import { Role, IToken } from '@myapp/data';
 import { config } from '../config';
 import { hasPermission, extractToken } from '../utils';
 import { AuthenticationError } from 'apollo-server-express';

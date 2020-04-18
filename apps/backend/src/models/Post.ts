@@ -10,7 +10,7 @@ import { IsNotEmpty, IsEnum } from 'class-validator';
 import { GraphQLUpload, FileUpload } from 'graphql-upload';
 import { User } from './User';
 import { Comment } from './Comment';
-import { IPost, Tag, ICreatePost, Lazy, IUser, IComment } from '@app/data';
+import { IPost, Tag, ICreatePost, Lazy, IUser, IComment } from '@myapp/data';
 
 @ObjectType()
 @Entity()

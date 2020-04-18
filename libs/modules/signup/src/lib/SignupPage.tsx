@@ -1,20 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
 import Router from 'next/router';
-import { message } from 'antd';
-import { err } from '@app/modules/common';
-import { SignupInput, useSignupMutation } from '@app/data-access';
+import { message, Form } from 'antd';
+import { err } from '@myapp/modules/common';
+import { SignupInput, useSignupMutation } from '@myapp/data-access';
 import { SignupForm } from './SignupForm';
 
 import './SignupPage.less';
-
-
 
 const key = 'signup-page-msg';
 
 export const SignupPage = () => {
     const [form] = Form.useForm();
-    const [signup] = useSignupMutation();
+    const [signUp] = useSignupMutation();
 
     const onSubmit = async (input: SignupInput) => {
         try {
@@ -24,7 +22,7 @@ export const SignupPage = () => {
                 key,
                 duration: 0
             });
-            await signup({ variables: { input } });
+            await signUp({ variables: { input } });
 
             Router.push('/login');
             message.success({ content: 'Successfully signed up!', key });

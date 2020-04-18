@@ -4,7 +4,7 @@ import { ExtractJwt } from 'passport-jwt';
 import * as jwt from 'jsonwebtoken';
 import { config } from '../config';
 import { User } from '../models/User';
-import { Role, IToken } from '@app/data';
+import { Role, IToken } from '@myapp/data';
 
 export const multer = Multer({
     storage: Multer.memoryStorage(),
