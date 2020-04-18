@@ -15,7 +15,8 @@
 1. `yarn`
 2. Start database: `docker-compose up`
 3. `yarn dev`
-4. Open <http://localhost:4200>
+4. `yarn data-access:generate`
+5. Open <http://localhost:4200>
 
 ### Technologies used
 
