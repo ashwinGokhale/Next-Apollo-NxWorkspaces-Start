@@ -1,47 +1,50 @@
 {
-    "npmScope": "app",
-    "implicitDependencies": {
-        "workspace.json": "*",
-        "package.json": {
-            "dependencies": "*",
-            "devDependencies": "*"
-        },
-        "tsconfig.json": "*",
-        "tslint.json": "*",
-        "nx.json": "*"
+  "npmScope": "app",
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
     },
-    "projects": {
-        "frontend": {
-            "tags": [],
-            "implicitDependencies": ["assets"]
-        },
-        "frontend-e2e": {
-            "tags": [],
-            "implicitDependencies": ["frontend"]
-        },
-        "backend": {
-            "tags": []
-        },
-        "data": {
-            "tags": []
-        },
-        "data-access": {
-            "tags": []
-        },
-        "modules-login": {
-            "tags": []
-        },
-        "modules-common": {
-            "tags": []
-        },
-        "modules-logout": {
-            "tags": []
-        },
-        "assets": {
-            "tags": []
-        },
-        "modules-home": {
-            "tags": []
-        }
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "frontend": {
+      "tags": [],
+      "implicitDependencies": ["assets"]
+    },
+    "frontend-e2e": {
+      "tags": [],
+      "implicitDependencies": ["frontend"]
+    },
+    "backend": {
+      "tags": []
+    },
+    "data": {
+      "tags": []
+    },
+    "data-access": {
+      "tags": []
+    },
+    "modules-login": {
+      "tags": []
+    },
+    "modules-common": {
+      "tags": []
+    },
+    "modules-logout": {
+      "tags": []
+    },
+    "assets": {
+      "tags": []
+    },
+    "modules-home": {
+      "tags": []
+    },
+    "modules-signup": {
+      "tags": []
     }
+  }
 }

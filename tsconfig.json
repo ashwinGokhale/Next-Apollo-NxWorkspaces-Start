@@ -1,30 +1,31 @@
 {
-    "compileOnSave": false,
-    "compilerOptions": {
-        "rootDir": ".",
-        "sourceMap": true,
-        "declaration": false,
-        "moduleResolution": "node",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "importHelpers": true,
-        "allowJs": true,
-        "target": "es2015",
-        "module": "esnext",
-        "typeRoots": ["node_modules/@types"],
-        "lib": ["es2020", "dom"],
-        "skipLibCheck": true,
-        "skipDefaultLibCheck": true,
-        "baseUrl": ".",
-        "paths": {
-            "@app/data": ["libs/data/src/index.ts"],
-            "@app/data-access": ["libs/data-access/src/index.ts"],
-            "@app/modules/login": ["libs/modules/login/src/index.ts"],
-            "@app/modules/common": ["libs/modules/common/src/index.ts"],
-            "@app/modules/logout": ["libs/modules/logout/src/index.ts"],
-            "@app/assets*": ["libs/assets/*"],
-            "@app/modules/home": ["libs/modules/home/src/index.ts"]
-        }
-    },
-    "exclude": ["node_modules", "tmp", "dist"]
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "allowJs": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@app/data": ["libs/data/src/index.ts"],
+      "@app/data-access": ["libs/data-access/src/index.ts"],
+      "@app/modules/login": ["libs/modules/login/src/index.ts"],
+      "@app/modules/common": ["libs/modules/common/src/index.ts"],
+      "@app/modules/logout": ["libs/modules/logout/src/index.ts"],
+      "@app/assets*": ["libs/assets/*"],
+      "@app/modules/home": ["libs/modules/home/src/index.ts"],
+      "@app/modules/signup": ["libs/modules/signup/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp", "dist"]
 }

@@ -23,12 +23,10 @@ export const LoginPage = () => {
                 duration: 0
             });
             const res = await login({ variables: { email, password } });
-            console.log('Login response:', res);
 
-            const response = await setAuth({
+            await setAuth({
                 variables: { input: res.data.login }
             });
-            console.log('Response:', response);
 
             Router.push('/');
             message.success({ content: 'Successfully logged in', key });

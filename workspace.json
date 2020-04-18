@@ -325,6 +325,34 @@
           }
         }
       }
+    },
+    "modules-signup": {
+      "root": "libs/modules/signup",
+      "sourceRoot": "libs/modules/signup/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/modules/signup/.eslintrc",
+            "tsConfig": [
+              "libs/modules/signup/tsconfig.lib.json",
+              "libs/modules/signup/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/modules/signup/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/modules/signup/jest.config.js",
+            "tsConfig": "libs/modules/signup/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

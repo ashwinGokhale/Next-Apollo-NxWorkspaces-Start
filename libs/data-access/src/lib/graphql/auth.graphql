@@ -10,6 +10,18 @@ mutation login($email: String!, $password: String!) {
     }
 }
 
+mutation signup($input: SignupInput!) {
+    signup(input: $input) {
+        user {
+            id
+            name
+            email
+            role
+        }
+        token
+    }
+}
+
 query GetAuth {
     authData @client {
         token
